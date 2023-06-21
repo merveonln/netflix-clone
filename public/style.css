@@ -1,0 +1,441 @@
+body {
+  background-color: #000;
+  margin: 0;
+}
+
+.logınheader {
+  text-align: center;
+  width: 100%;
+  height: 117vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/netflixBackground.jpg");
+  margin: 0;
+  padding: 0;
+}
+
+.indexHeader {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("images/netflixBackground.jpg");
+  margin: 0;
+  padding: 0;
+}
+
+.logınhelp {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0, transparent),
+    url("images/login-the-crown_2-1500x1000.jpg");
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  min-height: 120vh;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.dropdown button {
+  background: transparent;
+  color: white;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+.oturum {
+  color: #e50914;
+  float: right;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 90px;
+}
+
+.paragraph1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .paragraph1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+.paragraph2 {
+  font-weight: normal;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.basla {
+  width: 100%;
+  max-width: 36.625rem;
+  margin: 1rem auto 0;
+}
+
+.basla input[type="text"] {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+  border: 1px solid #dc3545;
+}
+
+.basla input[type="text"]::placeholder {
+  color: white;
+}
+
+.lone {
+  width: 100%;
+  height: 0.5rem;
+  position: absolute;
+  bottom: -0.5rem;
+  background-color: rgb(35, 35, 35);
+}
+
+.lone2 {
+  width: 100%;
+  height: 0.5rem;
+  position: absolute;
+  background-color: rgb(35, 35, 35);
+}
+
+.border-bottom {
+  color: black;
+}
+
+.container-tv {
+  padding: 60px;
+}
+
+.tv-text {
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-header button {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.accordion-button {
+  padding: 30px;
+  color: white;
+  background-color: #2d2d2d !important;
+}
+
+.accordion-button:hover {
+  background-color: #6c6c6cdd !important;
+}
+
+.accordion-item {
+  margin-bottom: 20px;
+}
+
+.accordion-body {
+  padding: 30px;
+  color: white;
+  background-color: #2d2d2d;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.accordion {
+  border: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff !important;
+  background-color: #6c6c6cdd !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  color: white !important;
+}
+
+.accordion-button:not(.collapsed)::before {
+  color: white !important;
+}
+
+.sss {
+  height: 80vh;
+  padding: 40px;
+  margin-bottom: 330px;
+}
+
+footer {
+  color: #fff;
+  width: 100%;
+}
+
+footer a {
+  color: #fff !important;
+}
+
+.row {
+  padding: 40px;
+}
+
+.container {
+  padding: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  .row1 {
+    text-align: center;
+  }
+
+  .row2 {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .row3 {
+    text-align: center !important;
+  }
+
+  .row4 {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .col-lg-6 {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .row1 {
+    text-align: center;
+  }
+
+  .row2 {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .row3 {
+    text-align: center !important;
+  }
+
+  .row4 {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .col-lg-6 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dropdown-toggle .d-none {
+    display: none !important;
+  }
+  .dropdown-toggle .d-inline {
+    display: inline !important;
+  }
+}
+
+.bg-darkk {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  opacity: 1;
+  padding: 50px;
+}
+
+.card-title {
+  color: white !important;
+  text-align: left;
+  font-size: 35px;
+}
+
+.help a {
+  text-decoration: none !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: -10.2rem;
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  opacity: 1;
+  height: 300px;
+  color: gray;
+}
+
+.LogınHelpBody {
+  text-align: left;
+}
+
+.logın-footerGenel {
+  background: rgba(0, 0, 0, 0.75);
+  margin-top: 0;
+  color: #757575;
+  font-size: 1em;
+  min-width: 190px;
+  padding-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.logın-footer {
+  padding: 10px 0;
+}
+
+.footer-top {
+  margin-left: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.footer-links {
+  box-sizing: border-box;
+  font-size: 15px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+ul.list {
+  margin: 0;
+  padding: 0;
+  padding-left: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.navlink-item {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-bottom: 16px;
+  min-width: 100px;
+  padding: 0 12px 0 0;
+  vertical-align: top;
+  width: 25%;
+}
+
+.footer-links li {
+  list-style: none;
+  margin-left: 0;
+}
+
+.language {
+  margin-top: 7px;
+}
+
+@media screen and (max-width: 576px) {
+  .bg-darkk {
+    background-color: #000 !important;
+    height: 10rem;
+  }
+
+  .form-floating {
+    width: 20rem;
+  }
+
+  .logınheader {
+    background-image: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bg-darkk {
+    background-color: #000 !important;
+    height: 10rem;
+  }
+  .form-floating {
+    width: 20rem;
+  }
+
+  .row {
+  }
+
+  .logınheader {
+    background-image: none;
+  }
+  .card {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    width: 90%;
+  }
+}
+
+/*netflix dizi-film sayfası başlangıç*/
+.multislider1 {
+  margin-top: 40px;
+  padding-top: 100px;
+  padding-left: 45px;
+  padding-right: 5px;
+}
+
+.multislider2 {
+  margin-top: 80px;
+  padding-top: 100px;
+  padding-left: 45px;
+  padding-right: 5px;
+}
+
+.dizifilmparagraph {
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.dizifilmparagraph2 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.dizifilmHeader {
+  background-color: #000;
+}
+
+.item {
+  float: left;
+  margin-right: 10px;
+  max-height: 168px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  bottom: 0;
+}
+.item:nth-child(1) img {
+  width: 300px;
+}
+
+.item:nth-child(2) img {
+  width: 300px;
+}
+
+.item:nth-child(3) img {
+  width: 300px;
+}
+.item:nth-child(4) img {
+  width: 300px;
+}
+
+.item:nth-child(5) img {
+  width: 300px;
+}
+
+.item:nth-child(6) img {
+  width: 300px;
+}
+
+/*netflix dizi-film sayfası bitiş*/

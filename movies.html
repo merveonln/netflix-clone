@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Netflix | Dizi/Film</title>
+    <link rel="stylesheet" href="public/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      .imgalt {
+        color: #fff;
+        display: block;
+        margin-top: 2px;
+        text-align: center;
+      }
+
+      .carouselheader {
+        padding-left: 3em;
+        margin-top: 13em;
+      }
+
+      .carouselparagraph {
+        padding-left: 3em;
+        margin-top: 5em;
+      }
+      .carousel-inner {
+        padding-left: 3em;
+      }
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 6vh;
+        height: 6vh;
+        top: 60%;
+        transform: translateY(-50%);
+      }
+
+      @media (max-width: 576px) {
+        .carousel-item {
+          margin-right: 0;
+          flex: 0 0 17.533333%;
+          display: block;
+        }
+        .carousel-inner {
+          display: flex;
+        }
+        .carousel-item:nth-child(-n + 3) {
+          display: block;
+        }
+
+        .carousel-item:nth-child(n + 3) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .carousel-item {
+          margin-right: 0;
+          flex: 0 0 17.533333%;
+          display: block;
+        }
+        .carousel-inner {
+          display: flex;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .carousel-item {
+          margin-right: 0;
+          flex: 0 0 17.533333%;
+          display: block;
+        }
+        .carousel-inner {
+          display: flex;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .carousel-item {
+          margin-right: 0;
+          flex: 0 0 17.533333%;
+          display: block;
+        }
+        .carousel-inner {
+          display: flex;
+        }
+      }
+
+      @media (max-width: 1400px) {
+        .carousel-item {
+          margin-right: 0;
+          flex: 0 0 17.533333%;
+          display: block;
+        }
+        .carousel-inner {
+          display: flex;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .carousel-item {
+          margin-right: 0;
+          flex: 0 0 17.533333%;
+          display: block;
+        }
+        .carousel-inner {
+          display: flex;
+        }
+      }
+
+      .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+        opacity: 1 !important;
+        border-radius: 5px;
+        background-color: #181818;
+        text-shadow: 2px 2px 3px red;
+      }
+
+      .navbar-collapse {
+        display: none;
+      }
+      .navbar-toggler {
+        display: none;
+      }
+
+      @media (max-width: 992px) {
+        .navbar-collapse {
+          display: block;
+        }
+        .pcnav {
+          display: none;
+        }
+        .profilebtn {
+          display: none;
+        }
+        .navbar-toggler {
+          display: block;
+        }
+
+        @media (max-width: 992px) {
+          .dizifilmHeader img {
+            justify-content: start;
+            margin-right: 20px;
+          }
+          .dizifilmHeader .searchbtnn {
+            margin-right: 20px;
+          }
+          .dizifilmHeader .text-end {
+            margin-right: 20px;
+          }
+          .navbar-toggler {
+            margin-right: 0;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #181818">
+    <div class="align-items-center">
+      <header class="dizifilmHeader p-3 fixed-top">
+        <div>
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-lg-start"
+          >
+            <a
+              href="dizi-film.html"
+              class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+            >
+              <img
+                src="public/images/netflixLogo.png"
+                width="148"
+                alt=""
+                srcset=""
+              />
+            </a>
+
+            <ul
+              class="nav pcnav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+            >
+              <li>
+                <a href="#" class="nav-link px-2 text-white">Anasayfa</a>
+              </li>
+              <li><a href="#" class="nav-link px-2 text-white">Diziler</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Film</a></li>
+              <li>
+                <a href="#" class="nav-link px-2 text-white"
+                  >Yakın Zamanda Eklenenler</a
+                >
+              </li>
+              <li><a href="#" class="nav-link px-2 text-white">Listem</a></li>
+            </ul>
+
+            <button type="button" class="btn me-2 searchbtnn">
+              <i
+                class="fa-solid fa-magnifying-glass text-white"
+                style="font-size: 1.3rem"
+              ></i>
+            </button>
+
+            <div class="text-end">
+              <button type="button" class="btn me-2">
+                <i
+                  class="fa-solid fa-bell text-white"
+                  style="font-size: 1.3rem"
+                ></i>
+              </button>
+              <button type="button" class="btn profilebtn">
+                <img
+                  src="public/images/profile-icons.jpg"
+                  width="30"
+                  alt=""
+                  srcset=""
+                />
+                <i class="fa-solid fa-caret-down text-white ms-1"></i>
+              </button>
+            </div>
+
+            <button
+              class="navbar-toggler navbar navbar-dark bg-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+            >
+              <span class="navbar-toggler-icon"> </span>
+            </button>
+
+            <!-- Dropdown içeriği -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link px-2 text-white">
+                    Hesabım
+                    <img
+                      src="public/images/profile-icons.jpg"
+                      width="30"
+                      alt=""
+                      srcset=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link px-2 text-white" href="#">Anasayfa</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-2 text-white">Diziler</a>
+                </li>
+                <li><a href="#" class="nav-link px-2 text-white">Film</a></li>
+                <li>
+                  <a href="#" class="nav-link px-2 text-white"
+                    >Yakın Zamanda Eklenenler</a
+                  >
+                </li>
+                <li><a href="#" class="nav-link px-2 text-white">Listem</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+      <div class="carouselheader">
+        <h1 class="paragraph1 text-light">Yalnızca Netflix'te</h1>
+        <h3
+          class="dizifilmparagraph text-light"
+          style="max-width: 598px; font-size: 19px"
+        >
+          Başka yerde bulamayacağınız muhteşem ve orijinal içerikler Netflix'te.
+          Filmler, diziler ve çok daha fazlası... Tercihlerinize göre şekillenen
+          bir kullanıcı deneyimi ile hizmetinizde.
+        </h3>
+        <h6 class="text-light dizifilmparagraph2">Yeni Çıkanlar</h6>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfUsqJzabU1qMlSyelMnaEDaIMPT5cuiCFqN0lgbvfrug0oSYEp78UiikeduBroK1PJ6dJ-FbnE05dyCDG_7FQrhynY26UepHUGogbJbmpyC7qzWaMyfpgpoTLDQYcBHELSy.jpg?r=608"
+              class="d-block"
+              alt="Merve Kult"
+            />
+            <span class="imgalt">Merve Kult</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVMxa73L9TnqJ6g2DVUPavSu4CH51Q4PGn8sfbKre4HH5MDTsRiJlu4RE8XyjoEx2h5WQ_OPDGKHpwsic7BeyqKkSnUPF71RZ2K1Ur0siXGt31WL09R8txa7EJfXKvQp_DcVfx2XbcA2Lr_xr2dscWD4dCjA-SxSnNxwxb3XErA3XAFhdREiA35dQggosnmWbFJfCS45tQVUcnR938B1uJK6-9Px1F45Mb_bkVkd5V_Ke_O_L7MTlMMmrHe_weHGWcRPMT6VpZpAe3G-sfSCnROSqs4P9PkcPi9eeol-xb_zsccxA-Q.jpg?r=fb2"
+              class="d-block"
+              alt="Never Have I Ever"
+            />
+            <span class="imgalt">Never Have I Ever</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVK7Nh2v1xpHTBYN6rhx_aCoDU-wSjsUkSf8Y709qaPEceYp79xlZr1cOW-B1rdkE8klqx9Im_xYHZBkCM5pyReFAS0F9aE09DQ_wIlFbcMOCCXm0uHp4dpPk8-dR1Muhy1Z.jpg?r=bf4"
+              class="d-block"
+              alt="Blood Hounds"
+            />
+            <span class="imgalt">Blood Hounds</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABe0zzU5yx8otdg-EXv40rUdh4t_XnBgY8r5aiccDTNJdaj79nUQbwL3mJkw1aEJLrL5-mYqu38ZKY2md5RsGbZOENk3-7QDeb0IiIGqzab8fHZgGG9VWfnxRFwiZCEHsq1fq.jpg?r=141"
+              class="d-block"
+              alt="Arnold"
+            />
+            <span class="imgalt">Arnold</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTX7LOHME66uhPIoVTi7AiHqSONcJ41suPnQlaysYzX0svpiiVR5jIa0fSLzZQ00uNA1200Kq7dsCOcEdqYcbuzvHC2L_1NIFPfvLlLUkxVmA8mgz1R0_9tMrN8H-JNmcEj-KalzBgeRXr83wNS-QCccOXYLbaXKS789fcP1XZR6x8_Ebu7HasC_9g23SRouGkxq_RmutjnKQMQc_FHweKiBW77nj7Ui2AZE9D5HT6dE4KlJFkpvsD26skMHUOJX9bUtZkHqcbOnKq0-Z8R8IM9_IsIz68tg-6FCgFOcZJPO5Ai8f3k.jpg?r=3dd"
+              class="d-block"
+              alt="Human Resources"
+            />
+            <span class="imgalt">Human Resources</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABRrJLawUQBLuw6U7lyyBefzYuvMi4URhqtRYwOnfmg1o2W83Q4E94fZDwQG1g2AnLB0Vj5ywBWRkzlyD78hEbIiPGIwpGsrC2ucQTB8iIxWdYbV5WSgIJHRRvSZD-tvF7WUyT1QVgIeKw1O1h_wS0BDr3aCv3etU2SRG8_5bLz1LBy7gcO7TRHVbmYtxdid0nC3zdyG13WSDcodnlIj6nuKNdXZP4WDlwmoWScXuyM2xVkTTi8i1IIcQ2EcjeJ53SxlEfObLfWb3tZ5ZDZz_GF6O2QOxKjsWRSGsXqxols6Q-toIo0YtecXjBw.jpg?r=d3b"
+              class="d-block"
+              alt="My Little Pony: Bir İz Bırak"
+            />
+            <span class="imgalt">My Little Pony : Bir İz Bırak</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYi-V4oCMPH7ZKA_DtceQFSPbOq6uagZfUYFqwdvLIgWGwLOGQWGheqmgEZVoYoDvmIM3YcmRdXNfHP_c9ao0i2yVZUpszMgZrqH-8zvFwnESjHRge0yeMgWab72Zl70kM9R.jpg?r=0c8"
+              class="d-block"
+              alt="Tour de France: Zincirleri Kırmak"
+            />
+            <span class="imgalt">Tour de France: Zincirleri Kırmak</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABW41jgEzTpnI5bAjuFFFPMJdOK8lXw9Tmc6-TQQrTop_JuNVvzZxM36MCvKon9OHUnP1gl0DmR55bA4lhejr262lFdYAMFeNzILf5DrfyrjRVwwogCBQfMJvDLtkWxI4Lv03.jpg?r=527"
+              class="d-block"
+              alt="Bana Hiçbir Şey Olmaz"
+            />
+            <span class="imgalt">Bana Hiçbir Şey Olmaz</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQJcrc6NpRPGd1fJqzvKOk9B3no7cYjwO83Hn2ybkzyLi3XctZtW42vRw1CYFvPdiHlVG7eIvuElefJRUuJvvxD7yLtYde8b0zyDQm9KKCgMWvgdgpFP60w3JGYakaRYGnNF.jpg?r=c6d"
+              class="d-block"
+              alt="Alfredo Galán Sotillo: İspanya'nın İlk Seri Katili"
+            />
+            <span class="imgalt"
+              >Alfredo Galán Sotillo: İspanya'nın İlk Seri Katili</span
+            >
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-next"
+        style="top: 80% !important"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+      <div class="carouselparagraph">
+        <h6 class="text-light dizifilmparagraph2">Netflix'te Popüler</h6>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYfKeCbQR0MIA99H7_gWiwHPDelQTklvySQt9vA4_MdtHLJU_ioyzoNJZ1w5UeL4DyGhhIqyGFy72VfrcMTR5ec-2Kg0CoAcVVgyUrURoFoZYT0QGF3dtxIEgyYfnpuiFpnT.jpg?r=082"
+              class="d-block"
+              alt="Wednesday"
+            />
+            <span class="imgalt">Wednesday</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWK_cHo7_nfylMzVpUASj6OrkZiBe9805ms6LUaZSrS4HzmT_Oeys99sHJ6foxA5xGkZK02WE0DMjtbuzbY_WN9j51QSLAkTzbCuk_i5dfTCnGwLQBelHHrAfJn-w2G2FsZLPKOGnw4sHxRx5FDs0sgFkIeZgcSgCRlD9aE2K-EYwCwon4MaFFpYattB_5gtVqBvC59BRsiZnZu3YFo766fSdkwII2n6hTlDot9DCdYW8RAAHFvd8C6meRPrgSMf0QI7ec5xD81W4IkvrlBHYmoW0gePeWfGm9jPM_1rxtYBIfJHS_E.jpg?r=ed2"
+              class="d-block"
+              alt="Valeria"
+            />
+            <span class="imgalt">Valeria</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTuvWyvO6yXLwwoq6tY9H01BzIavtoamHUjvMlLln921MlqEyiMFhztRfi0upfaebJfyDMX-K1qS48QwBWSzo3QPgzKBb_TNmtKvZrEkl9W_WhT1p8YON6vb5esYMZ6mJOIC.jpg?r=2c6"
+              class="d-block"
+              alt="Terzi"
+            />
+            <span class="imgalt">Terzi</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABeeOEPg6I25dNPMMsVqcYP9Lw3r9VmoIMWzgUNK4JHkDkF2jcejrFM08TKRCRB2ueU3g4imOqe7lTjCnUtf8Qf-MR4Aqp-eGUt2L2cBtbp-mvo1GSCei_8ZaQhlyMrIAQge9oCmkJuFGWOGHgenZUv9Yy9jQ3D_rSlTLiSzvJQRxyfE4NIScBKLxa1a_gAKC-ZVC5NlIR_WIlwlOFP0Zk-4GjCiJKXcgOq5Ypbj7qKq9YJzy9X9z5UEN9YJ1stqeM0hNq5d8kikbOXqhuu6CouJ50w512e2u0JoGUIKFQJLE5ajKkq1sv0RwhA.jpg?r=488"
+              class="d-block"
+              alt="Manifest"
+            />
+            <span class="imgalt">Manifest</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWzPR8nR7Bcjz3Vgkn8zYyeOTjb5AtST4PEoxaZkbs_JlYcXyzTaNRwGa6t4UclSGnAtLiWeq7tMKIv5OqyM7dvKZLoah52bMgYuoCdxKVDnGOX7TCxP1TeQvYhwVgP79Lhm.jpg?r=501"
+              class="d-block"
+              alt="Lucifer"
+            />
+            <span class="imgalt">Lucifer</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABXvyOi2oE3shVdVN3yjEFxb7kDjrb2sum-PHd5sCRBILm_33Xa2L2pitgiXmzTID3-PHCs6e-fVVJYyqhUdgSRMeWFGUUeYbWMFN9lkTFAy1UcIxv0IoM4eexptGeyyBTHz-.jpg?r=04e"
+              class="d-block"
+              alt="Sahte Profil"
+            />
+            <span class="imgalt">Sahte Profil</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABcHrdnFIp91al5xqQLOObROGHOmVkWP4ShyZMRDMJ2teL-eNM2FOm9K04US3vfJk7y-0tvx9Gbe4L-3LjmsqyhhA4ZGvadQzBQk0FTHfgByfuiLdYdBIdiEqXurJsnmdhshw.jpg?r=8a8"
+              class="d-block"
+              alt="La casa de papel"
+            />
+            <span class="imgalt">La casa de papel</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTtfuTyhsx3tFg2XdFgiME3ZoIgzeJSPtkVVAgf_IsXvgSVykoXqlpIRG9qLQxverfkMsdBx4907sytfNQBEdxMnMr-zks4zIUnj5LQMNHzj0n2XzxF_gRMvt1cvRJCXXY-j.jpg?r=c9f"
+              class="d-block"
+              alt="Sahte Profil"
+            />
+            <span class="imgalt">Sahte Profil</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABcL5jLOTAi6HXLNlsRDzpf7v08IAzrUNZrAnCbLWgI9pl9--18vxOC0c1HUa-_juV6tdkUCyaNltNHvRw1cjSsoSE8fATn0ATFW2Q9vQltY6Ffnf2BlQhxpAB6wSaf7_9nLp.jpg?r=c0e"
+              class="d-block"
+              alt="Sex/Life"
+            />
+            <span class="imgalt">Sex/Life</span>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+      <div class="carouselparagraph">
+        <h6 class="text-light dizifilmparagraph2">Bilgiye Aç Beyinlere</h6>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQbdkyqAAiyvm6tDKnz_B2MRinByBoj6lCrwh6Na4PyO09dy9xo8Zbj18P5ivYBn8Ak36ldDtWTnSIDr7UMCIOs_Pmx1Sp4NDtyTEl9V_PtQZCpmQNCxdPEUzBe_BpI20SWG.jpg?r=2da"
+              class="d-block"
+              alt="Cennette Yaşam Savaşı:Bir Aile Masalı"
+            />
+            <span class="imgalt">Cennette Yaşam Savaşı : Bir Aile Masalı</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABXaIsfYQ-PDQvXviF6I0FLRWmr461JaSq-IJVX84QW-PSuWPGOf8Zick-V7lPsPHTBkvb4PH_-yhWNb-X1ESy4tN1IuLlpi9L7owLo0nQG6v3NTN8QU1qSD4dPI7_T9WBguz.jpg?r=167"
+              class="d-block"
+              alt="İnsan:İçimizdeki Dünya"
+            />
+            <span class="imgalt">İnsan : İçimizdeki Dünya</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVyCuAblUATLFl60Srg0SCL1jgcVSIhfuS3y8wRfBtVnTmsmG-VGiyMEJ70XApgoQ5Dl8fzZ-sSO_ushtk1Ff7JEqdkqBntfXQufKIK51XoWZbf0pRAO2Bs47sjohh4dmqeA.jpg?r=cf3"
+              class="d-block"
+              alt="Gezegenimiz"
+            />
+            <span class="imgalt">Gezegenimiz</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdyULwLE8IUmLsLhto2Ak3J-GLwOZQmgKZ6alSyRqzgotwZ5ImVA1WcucMm2urlSFCatJmpXQPirgxX-8lpZZbl7n_m6q5f3v81W-eFRY2L-simBbiN98--eh3-cldIIe39h.jpg?r=404"
+              class="d-block"
+              alt="Evrenin Hikayesi"
+            />
+            <span class="imgalt">Evrenin Hikayesi</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABRqjjmoMDuMH58TNHUwe4z93qGqbaeP1sfjAt0OSMg3SDwPuFT2Iq6gUhvGa3-NImrw4NderydacTORoI2rYDDFLBkwQvPjBFhssLKTWa6zvavmXEma003UNnpe42fnkX_BP.jpg?r=495"
+              class="d-block"
+              alt="Yavru Hayvanların Gizi Yaşamı"
+            />
+            <span class="imgalt">Yavru Hayvanların Gizi Yaşamı</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABeLkd9kjrsr2qy6MdG0J3u0HSGoo-wknJnMjLFha2r7_VwurboCPJTK3iHwW1ROllctH6Zp0T1rpbihyv-lS7GUr2vZCANCmAOjibLSbyboKwfgu5EBFgbvxRtiXS7bY5SBF.jpg?r=870"
+              class="d-block"
+              alt="Dünyanın En Harika Ulusal Parkları"
+            />
+            <span class="imgalt">Dünyanın En Harika Ulusal Parkları</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdWNm8eMBOFQlpjjn8RXCWnJw68ROT7JAV1CgDk8-F52cujlaehzjduVZW_iNy70Eh_nDYEIpJB_MhJ9v3SP6puLtq2Abf2WnP0SXO9aqb4ihSTjktpn1h91WaSmkHq0kr1_.jpg?r=a8d"
+              class="d-block"
+              alt="Sonsuzluğun Sınırları"
+            />
+            <span class="imgalt">Sonsuzluğun Sınırları</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYQ3dBVc8u6wwYJw1hrF_BHSHAh9bvPMnwfFjEAX93Q0s1yad7ugRd9W4YkHR8O7iZsI1qS1ok9_Xp6KzNZSIU8x8fDOnpPfQrzZ2SROlfmXmTCNtB7K-XkVkR1F7oWTWaVD.jpg?r=62e"
+              class="d-block"
+              alt="Eğlenceli Tarih Dersleri"
+            />
+            <span class="imgalt">Eğlenceli Tarih Dersleri</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABZ46AqtgPXbmSyEgmoJcHWJ8kpv3ENHkWZaBoa9Ad2GKQk3Rw2VS6WMULrTUP0fL1pdiVttQ8FeituoY0DoM-lFEQ_jvO84EKfPBSVdkYi9V2fjWvuUZZzfTKVWUeWO2UJKA.jpg?r=95b"
+              class="d-block"
+              alt="Zorba Nasıl OLunur?"
+            />
+            <span class="imgalt">Zorba Nasıl OLunur?</span>
+          </div>
+        </div>
+      </div>
+      <!-- <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button> -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+      <div class="carouselparagraph">
+        <h6 class="text-light dizifilmparagraph2">Hollywood Filmleri</h6>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTvH-KKZOptDhdnLxOuTqfD-gIcSQbc1OtZoLic7iokSCiYuTZJvISpzKxJ4Bzqt-P3KV9KZVaaTCewTsgvo_6Jtzr2dv6siqCTjJfYC5q5rDBvMeNtYNIkwPyACtFAQlVEe.jpg?r=b32"
+              class="d-block"
+              alt="The Mother"
+            />
+            <span class="imgalt">The Mother</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQWIgBO_EFhOKrvusmvJ65y8sI24OEmAMpeLrnGtbfX4WasnUl3oPS1Q4Lu2ttWYw5O4WeAWN-kko_WW1qeF3PR-y-OWn3Dg7oQ4wGuVYaNMksrS439WmckoepQLc_IfaqrF.jpg?r=347"
+              class="d-block"
+              alt="Red Notice"
+            />
+            <span class="imgalt">Red Notice</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABSgIVHimW_He-7bxGPb7ah8ODKEcfDqDehVy7Bu7rRupNAsUgsj2xTtqlbcaTQVvcS2fwZF96b4nxy97Dz5cvMhtPnzSt8FAePjbxi-Fd1mr3a3ChZ4j3Qg6QE6ZtCL_aDtQ.jpg?r=35c"
+              class="d-block"
+              alt="İşte Böyle Bir Oğlan"
+            />
+            <span class="imgalt">İşte Böyle Bir Oğlan</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABSZHPbXOM7ttEYHsykUWSLwadgVGhwReRB_LqrsOGhfqxFtsTV0YM51YC9PhMJ2F4I1_n6M5RBlrrVdJgwLiATc9ya3BOb8cZnOwxnnD3AEaiLhdqODw0Jfvp1i3zIs-H-vn.jpg?r=3df"
+              class="d-block"
+              alt="Sürprizli Gece"
+            />
+            <span class="imgalt">Sürprizli Gece</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABc9pR13Ewr-rvyeE7sBEFc6pcUPpYGcOG1Ll4mMXb4D-np1kcr7guTsPLwbs6S_Ntf95hJPZBfdwbJb6uJxJ8zRkGShJHfv9O7QtRZu9vi3kodXhBdOxehHXcEW61wKFLitm.jpg?r=c9a"
+              class="d-block"
+              alt="İyilik ve Kötülük Okulu"
+            />
+            <span class="imgalt">İyilik ve Kötülük Okulu</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABRjlL-PZKHuzK7Z0XsgUr6GLxj7kwvB8QSaLSqOVUPZ51ZYfFj08x6mWD3lwz99TionMW5nRgoegNBdWMI5N21bd3MyVohmqF2NaULe3F4adXzDltYifKhREitEvpeDIOEaZ.jpg?r=a17"
+              class="d-block"
+              alt="Bir Eksik"
+            />
+            <span class="imgalt">Bir Eksik</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYl5kL-I-74uC-nFRpeyywXNzvRT_xiaNGnj6xS6mkUW4fGoXckUuVbY0dXsJY_eQcM0EbqcMaSIKI6GfUndJegKtqRkjbC56xAdbSK611OnIeXwpRFwsFZLBKJd9rHxwS3j.jpg?r=5ac"
+              class="d-block"
+              alt="Extraction"
+            />
+            <span class="imgalt">Extraction</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTeITydq2z4zNOuZwEZcQj29LyI2YWs4nRd7in3fLQs4aIudl0CjbgLk3Ruv72t0Agjwi-Yqjtg_YUvzm5_Vh6xFKOROG9MTG1C0BK-1vuzzHhYlww6JgutYikxdZZLucrTd.jpg?r=a60"
+              class="d-block"
+              alt="Hustle"
+            />
+            <span class="imgalt">Hustle</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABcUjzHFgb4aq-ldAOLiJgBTZWSNhomBYYC-tmwn7yrEOO_h42ba43f6K5fYm0Q6cINHObchs3dFQe0tL_DqUsTPUA6KXFCXsm61SRoeEmizLqGlZOFU9GREGBKIf-qq8eh6A.jpg?r=362"
+              class="d-block"
+              alt="The Mother"
+            />
+            <span class="imgalt">The Mother</span>
+          </div>
+        </div>
+      </div>
+      <!-- <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button> -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+      <div class="carouselparagraph">
+        <h6 class="text-light dizifilmparagraph2">Gişe Rekortmeni Filmler</h6>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABcUjzHFgb4aq-ldAOLiJgBTZWSNhomBYYC-tmwn7yrEOO_h42ba43f6K5fYm0Q6cINHObchs3dFQe0tL_DqUsTPUA6KXFCXsm61SRoeEmizLqGlZOFU9GREGBKIf-qq8eh6A.jpg?r=362"
+              class="d-block"
+              alt="Extraction"
+            />
+            <span class="imgalt">Extraction</span>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfNHj91muJFh8mIMCpj5qNBh7kvhmytGYRkYnFWqUHb-hUiMN7nGMWw1EU_xXvF1AbBSO4vnfb72D1t2jAUSBMjghcKo4gC9piXeZQJtztJjcPABbxzAPdaj2nrx7zsk8avg.jpg?r=074"
+              class="d-block"
+              alt="6 Underground"
+            />
+            <span class="imgalt">6 Underground</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdzOeOqPEk1M_DWfMF64utFLlsrEMLTsiViL_B4cVd1PuKFzMNbkkathcJBDLghK2pIeAanGHGL_X5pgpNZDnCQPlbK9mVM8UFdjutj-fHXxQASUlsEWhvy25GXqlXGZVz_3.jpg?r=fb8"
+              class="d-block"
+              alt="The Gray Man"
+            />
+            <span class="imgalt">The Gray Man</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYsFT7jKoQvfhae3GE8OZ6zVGJipa_5JF-i530lYqXz8ww5GtQkQr4b17x5jU4uqcqAUpHt9S5QfOhfDM8qTCEN3ClmHhT6drnz0RRLv8PsIqNHuKCZn9gDGDEOg9WtmZNCK.jpg?r=75c"
+              class="d-block"
+              alt="The Old Guard"
+            />
+            <span class="imgalt">The Old Guard</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABbgHI0NGCYaDCtBXAFMI6I4Rd_mCZMyJmxVieVzca79_eTlhQD8gEFO6lH3hlorfs32LGf6op9S1Gnu3zwc91nZQ1YUK9KUSEb3nmglJMaA51GxOqd6mDSzO1gta7L_zrKjl.jpg?r=e99"
+              class="d-block"
+              alt="Triple Frontier"
+            />
+            <span class="imgalt">Triple Frontier</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABcIMsEbtuHjLd1VGdORw_Zw90uGtCVD9H5wA_M12R4QtVVLGuDCQi50XNwy16RJZJyFtzGhFBb0Hs5rCHMrQZHjM_cxdmfW2USx_nYdFv1PBezqdPW0phLl3uB9Xz3VaZpLd.jpg?r=f58"
+              class="d-block"
+              alt="Aşk ve Canavarlar"
+            />
+            <span class="imgalt">Aşk ve Canavarlar</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABb2uUzEX2rK6PUvo95NM4-HJ7YorK7U33GPJNvns8-K9q4mB84tMS0SDAtcvRf3ZHwxkNeSLOpOssp6hBsk0deNle8OLpqG5ld5zx3ZRWSG9ZjDIklPcyfGwCQo5FgzohJ9S.jpg?r=312"
+              class="d-block"
+              alt="Murder Mystery 2"
+            />
+            <span class="imgalt">Murder Mystery 2</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYgwUORfZAWaZXibWSy0JbJ0HiekoFl4qVmgCOJULRVZWAY0Q5p8W-Vd9ujGDbmW4aAkYX3bLpdyoLW1o-7JkVIql5MU0pmVMLdqKV8babjyCE3sMrFfsgOQjugXILbg3n_A.jpg?r=ffd"
+              class="d-block"
+              alt="The Adam Project"
+            />
+            <span class="imgalt">The Adam Project</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABf3B44YOnsALb2gq-qG0RXQ7X3ZMw0GbGNrl_vPLoVJNlKg8FNAq8fhMw82JW-Zm6lkSGIR9SRe4CHGnPQ_P0pRn9F6l3vIuTnlti7fL3sIjjqISpwNCpF9zppE51DwT4g8X.jpg?r=3db"
+              class="d-block"
+              alt="Enola Holmes 2"
+            />
+            <span class="imgalt">Enola Holmes 2</span>
+          </div>
+        </div>
+      </div>
+      <!-- <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button> -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+      <div class="carouselparagraph">
+        <h6 class="text-light dizifilmparagraph2">Destansı Dünyalar</h6>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfRWV3DU4RDpY_poy0SDMgj2dNfdvHh-W92WH1fRgyESphp9XiYvZ6VTcWXH0x0A7EnNB8ok6O5NXQDKGHIbvAAngELZEjnxQWClPO2ay-Lwv02fL6iozdir0PeZ7f6dkZ0H.jpg?r=592"
+              class="d-block"
+              alt="The Witcher"
+            />
+            <span class="imgalt">The Witcher</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABU7qmah1VnBdExCG663CJks0W45EqA1d0JM8octnDLYX0e3rUqGQUT_51DSl6EZCZcQh4YCJlbOWNBVcO-xK7LtnPpe7zcpf8fZXzxZRvO-kbxcPI3FmPwK9nMuiFKahkDXc.jpg?r=11a"
+              class="d-block"
+              alt="Ragnarok"
+            />
+            <span class="imgalt">Ragnarok</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQXHuG7Oj4JXNMgCN9LGSA7NTzy9_I8hyGBTS2ZP-_xdT8Nr_kjeXvJvoJ_M8yxtZud4wr9AEjP6yXt0uY4jI8DU9zXNoxJXg-gOIrOkFEAk7QUDxiE_2tW4RWxkEvt3MJSc.jpg?r=a59"
+              class="d-block"
+              alt="Gölge ve Kemik"
+            />
+            <span class="imgalt">Gölge ve Kemik</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABRyb0ldEpUa7zyc2O_VHBr9pKSoYasYOMbIgoc2pbrObuzEKVZ9URo1nwkVg8MPIsKlYLcl3i5vBL0kVAsXD35tsgC3gxEGUw7Q7CUxr3EC-b1WtK4RwfFVJ9Y-X8PNhOa4W.jpg?r=3a9"
+              class="d-block"
+              alt="Black Knight"
+            />
+            <span class="imgalt">Black Knight</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABbEmV4XsfTxBq7hjH6uUWUf3_YRLHhnJcerAYs1ovfI9_bSjM33FpdOCurbddk_PvMtJf8AfuFcY15ZhAZCVcQCzvv2A0ynBIJzzbC6aOLreoaqJrvB-xXVXKG9K6TcFvA2R.jpg?r=257"
+              class="d-block"
+              alt="The King"
+            />
+            <span class="imgalt">The King</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABUbBQYC3zgLG74Q0VkHXaOvekW2f0q_ZGZ1Tn_-wF3SlzbPgyTAWpiMAQvfH16s0wCNw__UVjnYLjm1wK34JkIS1woEz86usCDBOoPbkJ8PDXFadWcWymmbHF-k29pzRYEzk.jpg?r=f76"
+              class="d-block"
+              alt="Hustle"
+            />
+            <span class="imgalt">Locke & Key</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWqP8eI8GVLb1bGEquVLj89px0_W_7VwatmXh2hpyEPjYLOiZFQnimJ40zto8-g24HqPZKrv2b0XcJ8sZakhQERmQYpsD0L4npVWwAkuClW8IPnTSrT6b_jtAe5SqkVgB84Z.jpg?r=681"
+              class="d-block"
+              alt="Hustle"
+            />
+            <span class="imgalt">Hustle</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYyXIZyqbX-ud7FrGoHu_ruTeXKPMA7MadaLkRe-xa_xS84OQhb-16z7LsqVjByA_H5-IkUZAvNT6S-nug1DUtAomxvxkvXfLr8n3ICoGQezrv8E7fJThAXZyq6DZudGlpGn.jpg?r=556"
+              class="d-block"
+              alt="Hustle"
+            />
+            <span class="imgalt">Hustle</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABRgPWGf1E0qfX6JmM6qZCg4ErOlhfABOctvYx2DhYtqp4yYxCH72SriFDrfy5OxXPhs_DDcRk2V5e8EmtQokKWgvpe59WCvJRqu6rNuK3zvseI4KBCUBMPv7E6ed02W86N5t.jpg?r=3ee"
+              class="d-block"
+              alt="Hustle"
+            />
+            <span class="imgalt">Hustle</span>
+          </div>
+        </div>
+      </div>
+      <!-- <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button> -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+      <div class="carouselparagraph">
+        <h6 class="text-light dizifilmparagraph2">Hafta Sonunda Bitirin</h6>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABZemmrMaRP3BbvSmgKLTfo1M3yb8VgbYQQUgc3pn-Zgr4WoPJRLV4zr4Kyq6nXqGcaFbPaRcamPUw6isYOw-pDhDcnhh4crH5qlVp-eVbnQHxEGpfaH60OKmweG7cYjLz9am.jpg?r=853"
+              class="d-block"
+              alt="Squid Game"
+            />
+            <span class="imgalt">Squid Game</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTEmbT6Rsg1SpxlUY9NxyuTz0i_-y-WMQ65kqrOdOjRrtO0tCm6q2VdR7opKosjgiWgLYKEkkpf296fMghhyXRjZ55xrypzpCxMnV5_CJcXfRTqIRs_cmqzXL_uKTlSZLi_O.jpg?r=8b1"
+              class="d-block"
+              alt="After Life"
+            />
+            <span class="imgalt">After Life</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABSPNVoQaUNhfmwuoNL4mD53ds0DiIC-Z18I-kiaoVOyHxYqhEnM9zDBzJHBgsSaKPQPUmAyYRjAakYQYOXa5xrw4LQ-a5qf_D-LQp-wsQ6qK-cGUGyO_Dkf12GtmR_kkpO93.jpg?r=d68"
+              class="d-block"
+              alt="Erşan Küneri"
+            />
+            <span class="imgalt">Erşan Küneri</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABa6dMvPk0-PTc2OOYNo7mH5z7sUjCmP4iIG9CnnWhPTT4BQMmE8t4xx-1iVC7K6ebzm4UTbdVgQlmXnt8-2kOSs4gn9AGxlZilm9XTLJimHrj6FHz6wpsKtQrwptx88nTv5W.jpg?r=355"
+              class="d-block"
+              alt="Şahmaran"
+            />
+            <span class="imgalt">Şahmaran</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfu0gJWNC-FX4honhpOOTWv3OGHw3qUSvq3UbEo3ByXMt1lmNMUfbVpYtjBHRjyg5cxBgzPbyXEcytO9Bd3dY9uvuomxw8K3v2muoXsFMl8s3aiGZztexrCa-KRZFgC09PC7.jpg?r=2f8"
+              class="d-block"
+              alt="Quenn Charlotte"
+            />
+            <span class="imgalt">Quenn Charlotte</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABcWOTNDXAD0qU3F4m8__yrVSzf-qTUCiRj3k5udZl-ya_168X8WyTQoW9Rb4pCwRLF0dPHOlXDqJ0pFSGEQXtcda3jFibhZzr-RnmxfQtSAQ80AvHxJz4MQht5D4fcA0g7d8.jpg?r=bf8"
+              class="d-block"
+              alt="Fubar"
+            />
+            <span class="imgalt">Fubar</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYGHEti6NWihxt_gdi4HXzjsNV80Rv76wupO85r2I_iR3wBFDMVoLh4_fUgn17qCrSG35fPQnU6xYlMycEqBrqdlgWV6pMHurctcjjjMBIy9va3VVzNnwVLYKKJGqETpwZgU.jpg?r=a03"
+              class="d-block"
+              alt="Hustle"
+            />
+            <span class="imgalt">Hustle</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABXfkfQh8UmwlvMzjHKhqWfRjFa4jkqxA0wE-qGcY96OelZuYnflAPksjCVE3jLfuUsggtxyIVeVC2Wkyc34jnMoOB7jj8hXTY8DBZNL-7tq-gAsjE0dhtfcB8vY7Lyz-mu9J.jpg?r=4a0"
+              class="d-block"
+              alt="Hustle"
+            />
+            <span class="imgalt">Hustle</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-wrapper">
+            <img
+              src="https://occ-0-7332-3466.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVlm2H11i9_MTMb6_LMz44bKoJraTabNHT7Wqv3km6-JQMaZDJ-xDATbOlUIe_9HBpCA2EVkgVkLx4UCJj0sXLJP4Hyxr8uVGePNpUqLAkB36Csp5NZhLGLX_dJ85O_u_2oU.jpg?r=be3"
+              class="d-block"
+              alt="Hustle"
+            />
+            <span class="imgalt">Hustle</span>
+          </div>
+        </div>
+      </div>
+      <!-- <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button> -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="container mt-5">
+      <footer
+        class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top"
+      >
+        <div class="col mb-3">
+          <a
+            href="/"
+            class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
+          >
+            <img
+              src="public/images/netflixLogo.png"
+              width="148"
+              alt=""
+              srcset=""
+            />
+          </a>
+          <p>&copy; 2023</p>
+          Sorularınız mı var?
+          <p>
+            <i class="fa-solid fa-phone"></i> 0850-390-7444 numaralı telefonu
+            arayın
+          </p>
+        </div>
+
+        <div class="col mb-3"></div>
+
+        <div class="col mb-3">
+          <h5>Medya</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">SSS</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Medya Merkezi</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Hediye Kartı Kullan</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Gizlilik</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Bize Ulaşın</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Sadece Netflix'te</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Yardım</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Yardım Merkezi</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0"> Yatırımcı İlişkileri</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">İzleme Yolları</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Çerez Tercihleri</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Hız Testi</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Hesap</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0"> Hesap</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0"> İş İmkanları</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0"> Kullanım Koşulları</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0"> Kurumsal Bilgiler</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0"> Yasal Hükümler</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/4a5fc781fe.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".multislider1").carousel({ interval: 100 });
+    </script>
+  </body>
+</html>
